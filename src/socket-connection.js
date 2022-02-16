@@ -3,50 +3,18 @@ const xss = require('xss')
 
 let socketServer = null
 
-sanitizeString = str => {
+const sanitizeString = str => {
   return xss(str)
 }
-
-let connections = {}
-let messages = {}
-let timeOnline = {}
 
 module.exports = (app, server) => {
   if (socketServer) return socketServer
 
   socketServer = io(server)
 
-  // socketServer.of('/stream').on('connection', socket => {
-  //   socket.on('subscribe', data => {
-  //     //subscribe/join a room
-  //     socket.join(data.room)
-  //     socket.join(data.socketId)
-
-  //     //Inform other members in the room of new user's arrival
-  //     if (socket.adapter.rooms[data.room].length > 1) {
-  //       socket.to(data.room).emit('new user', { socketId: data.socketId })
-  //     }
-  //   })
-
-  //   socket.on('newUserStart', data => {
-  //     socket.to(data.to).emit('newUserStart', { sender: data.sender })
-  //   })
-
-  //   socket.on('sdp', data => {
-  //     socket.to(data.to).emit('sdp', { description: data.description, sender: data.sender })
-  //   })
-
-  //   socket.on('ice candidates', data => {
-  //     socket.to(data.to).emit('ice candidates', {
-  //       candidate: data.candidate,
-  //       sender: data.sender,
-  //     })
-  //   })
-
-  //   socket.on('chat', data => {
-  //     socket.to(data.room).emit('chat', { sender: data.sender, msg: data.msg })
-  //   })
-  // })
+  let connections = {}
+  let messages = {}
+  let timeOnline = {}
 
   socketServer.on('connection', socket => {
     socket.on('join-call', path => {
@@ -58,12 +26,12 @@ module.exports = (app, server) => {
       timeOnline[socket.id] = new Date()
 
       for (let a = 0; a < connections[path].length; ++a) {
-        socket.to(connections[path][a]).emit('user-joined', socket.id, connections[path])
+        socketServer.to(connections[path][a]).emit('user-joined', socket.id, connections[path])
       }
 
       if (messages[path] !== undefined) {
         for (let a = 0; a < messages[path].length; ++a) {
-          socket
+          socketServer
             .to(socket.id)
             .emit(
               'chat-message',
@@ -78,7 +46,7 @@ module.exports = (app, server) => {
     })
 
     socket.on('signal', (toId, message) => {
-      socket.to(toId).emit('signal', socket.id, message)
+      socketServer.to(toId).emit('signal', socket.id, message)
     })
 
     socket.on('chat-message', (data, sender) => {
@@ -108,7 +76,7 @@ module.exports = (app, server) => {
         console.log('message', key, ':', sender, data)
 
         for (let a = 0; a < connections[key].length; ++a) {
-          socket.to(connections[key][a]).emit('chat-message', data, sender, socket.id)
+          socketServer.to(connections[key][a]).emit('chat-message', data, sender, socket.id)
         }
       }
     })
@@ -122,7 +90,7 @@ module.exports = (app, server) => {
             key = k
 
             for (let a = 0; a < connections[key].length; ++a) {
-              socket.to(connections[key][a]).emit('user-left', socket.id)
+              socketServer.to(connections[key][a]).emit('user-left', socket.id)
             }
 
             let index = connections[key].indexOf(socket.id)
@@ -138,4 +106,6 @@ module.exports = (app, server) => {
       }
     })
   })
+
+  return socketServer
 }
