@@ -1,0 +1,37 @@
+@startuml
+skinparam actorStyle awesome
+:User1:
+:User2:
+:User3:
+:User4:
+:User5:
+
+:User1: --> (Room) : User1 joined\nthe meeting
+:User2: --> (Room) : User2 joined\nthe meeting
+:User3: --> (Room) : User3 joined\nthe meeting
+:User4: --> (Room) : User4 joined\nthe meeting
+:User5: --> (Room) : User5 joined\nthe meeting
+
+"Meet Room" as (Room)
+Admin --> (Meet Room) : Admin created\na meeting room
+
+(Admin) --> User1 : Invite Link
+(Admin) --> User2 : Invite Link
+(Admin) --> User3 : Invite Link
+(Admin) --> User4 : Invite Link
+(Admin) --> User5 : Invite Link
+
+note right of (Room)
+In this "Meet Room", users will 
+turn on their cameras and microphones 
+to communicate with other users.
+end note
+
+note left of (Room)
+It also translates each user's 
+speech to text. Users who open 
+their camera can perform emotional 
+analysis with artificial intelligence.
+end note
+
+@enduml
