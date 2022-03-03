@@ -25,7 +25,7 @@ Yapmis oldugumuz projemizde, teknoloji cagina ayak uydurmak ve gunumuzde yapilan
 
 
 ## Yenilikci Yonu
-
+...
 
 ## Used technologies
 Backend tarafinda bir server ayaga kalkmaktadir bu server'ida Express.js framework'u ile yapmaktayiz. Socket programlama icin yogun kullanilan socket.io kutuphanesini tercih ettik. 
