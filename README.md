@@ -52,20 +52,13 @@ Frontend tarafinda ise react kullanilmaktadir server ile haberlesmeyi socket.io-
 ### Desktop
 - Electron.js
 - React.js
-- 
-
-## Project Use Case Diagram
-![Project Use Case Diagram](https://raw.githubusercontent.com/firat-university-graduation-project/graduation-backend/master/architecture/use-case-diagram.png?token=GHSAT0AAAAAABPMBJ2P6QGVOHXTXL72IDJIYRASTPA)
-
-
 
 ## Project Screenshot
-![Project Login Page](https://raw.githubusercontent.com/firat-university-graduation-project/graduation-backend/master/screenshots/login.png?token=GHSAT0AAAAAABPMBJ2OE364NDPONU3N2CB2YRASQVQ)
+![Project Login Page](https://user-images.githubusercontent.com/57585087/156552155-dddc4655-a565-4e89-aea9-383400eace30.png)
 
-![Enter Username Page](https://raw.githubusercontent.com/firat-university-graduation-project/graduation-backend/master/screenshots/username.png?token=GHSAT0AAAAAABPMBJ2OVRX2EGE2IGJNRA34YRASSBA)
+![Enter Username Page](https://user-images.githubusercontent.com/57585087/156552156-e6a504ca-8fbe-486e-a66a-a295d3117d46.png)
 
-![Project Dashboard Page](https://raw.githubusercontent.com/firat-university-graduation-project/graduation-backend/master/screenshots/dashboard.png?token=GHSAT0AAAAAABPMBJ2PJUREX7ILY2YNN262YRASPZQ)
+![Project Dashboard Page](https://user-images.githubusercontent.com/57585087/156552151-b78d141f-909f-4e81-ac75-1d7b4d9ba99a.png)
 
-
-![]()
-![]()
+## Project Use Case Diagram
+![use-case-diagram](https://user-images.githubusercontent.com/57585087/156552142-01e5834d-fd0a-4e52-8fb6-c5ad02393e96.png)
