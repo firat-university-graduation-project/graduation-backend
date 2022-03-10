@@ -1,0 +1,50 @@
+@startuml
+skinparam actorStyle awesome
+:Admin:
+:User1:
+:User2:
+
+"Meeting Room" as (Room)
+"Permissions" as (Permissions)
+
+package RoomPackage {
+  usecase "Camera" as Camera
+  usecase "Voice" as Voice
+  usecase "Screen Record" as Record
+  usecase "Speech To Text" as Text
+  usecase "Emotional Analysis" as Emotional
+  usecase "Permissions" as Permission
+}
+
+note right of (Permissions)
+Camera Permissions
+Microfon Permissions
+Screen Record Permissions
+Speech to Text Permissions
+Image Proccesing 
+Emotional analysis
+end note
+
+note left of (Room)
+The area where 
+users and admin meet
+end note
+
+:Admin: --> (Room) : Creating a room.
+
+:Admin: --> (Permissions)
+
+(Permissions) --> (Room)
+(Room) --> (Permissions)
+
+(Permissions) --> :User1:
+(Permissions) --> :User2:
+
+:User1: --> :User2:
+:User2: --> :User1:
+
+:User1: -left-> (Room) : Use the\n application
+:User2: -right-> (Room) : Use the\n application
+
+
+@enduml
