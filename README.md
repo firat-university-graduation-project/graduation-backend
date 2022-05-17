@@ -1,3 +1,40 @@
+# Bitirme Tezinin Konu Basliklari, Guncellenebilinir Tekrardan
+
+1. Video Konferans Sistemi ve Yapay Zeka 
+    1. Video Konferans Sistemi
+        1. Video Konferansın Sistenin Tarihçesi
+        2. Video Konferansın Kullanım Alanları
+        3. Tarayicida Video Konferans Deneyimi
+        4. …
+    2. Yapay Zeka
+        1. Kullaninim Alanlarına Gore Yapay Zeka Teknikleri
+        2. Yapay Zeka’nin Tarihçesi
+        3. …
+        4. …
+    3. Video Konferans ile Yapay Zekanin Birlikte Kullanımı
+        1. …
+        2. …
+        3. …
+
+2. Sayisal Görüntu ve Ses Isleme Teknikleri
+    1. Sayısal Görüntü Isleme 
+        1. Görüntü Isleme Temelleri ve Kullanım Alanları
+        2. Görüntü Islemede Kullanılan Terimler
+        3. Yuz tanilama ve bulma
+        4. Görüntü Isleme ile Duygu Analizi
+    2. Sayısal Ses Isleme
+        1. Sayısal Ses Islemenin Temelleri
+        2. Ses Tanıma Yöntemleri
+        3. Ses Kodlama Yöntemleri
+        4. Sesi Metne Çevirme Metotlari
+3. Kullanılan Teknolojiler ve Metotlar
+    1. Kullanılan Teknolojiler
+        1. On Uc Teknolojieri(Frontend)
+        2. Arka Uc Teknolojileri(Backend)
+    2. Metotlar
+        1. …
+
+
 # Graduation Project Backend
 
 Yapmis oldugumuz projemizde, teknoloji cagina ayak uydurmak ve gunumuzde yapilan bircok isin(egitim, is toplantlari, kocluk vb.) uzaktan oldugunu goz onunde buludurdugumuz zaten uzerinde calistigimiz ve gelistirdigimiz projede kisisel bilgilerin korunmasiyla birlikte istenildigi zaman kayit altina alarak daha surdurulebilir hale getirdik.
